@@ -1,0 +1,4 @@
+# Uy vazifasi
+
+### Natijalar
+
