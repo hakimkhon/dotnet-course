@@ -1,4 +1,6 @@
-﻿class Program
+﻿using System;
+
+class Program
 {
     static void Main()
     {
@@ -86,6 +88,104 @@
         System.Console.WriteLine(TryCalculateAverage(80, -1, 90, out ortachaBaho) ? $"Success: True; Average: {ortachaBaho}" : "Success: False; Average: 0");
         System.Console.WriteLine(TryCalculateAverage(80, 101, 90, out ortachaBaho) ? $"Success: True; Average: {ortachaBaho}" : "Success: False; Average: 0");
 
+        // 12. Savol: Uch xil shakl perimetrini overload qiling
+        System.Console.WriteLine("  Task_12");
+        System.Console.WriteLine(Shakl.GetPerimeter(4));
+        System.Console.WriteLine(Shakl.GetPerimeter(3, 5));
+        System.Console.WriteLine(Shakl.GetPerimeter(2, 7));
+        System.Console.WriteLine(Shakl.GetPerimeter(3, 4, 5));
+        System.Console.WriteLine(Shakl.GetPerimeter(1, 2, 3));
+        System.Console.WriteLine(Shakl.GetPerimeter(0, 5));
+
+        // 13. Savol: Talaba hisobotini overload qiling
+        System.Console.WriteLine("  Task_13");
+        Student.ShowStudent("Ali");
+        Student.ShowStudent("Sara", 18, 60);
+        Student.ShowStudent("Bek", 16, 59);
+        Student.ShowStudent("Lola", 130, 80);
+        Student.ShowStudent("Olim", 15, 101);
+
+        // 14. Savol: Chegirma summali xaridni overload qiling
+        System.Console.WriteLine("  Task_14");
+        System.Console.WriteLine(Chegirma.CalculateTotal(5000, 3));
+        System.Console.WriteLine(Chegirma.CalculateTotal(5000, 3, 2000));
+        System.Console.WriteLine(Chegirma.CalculateTotal(1200, 2, 400));
+        System.Console.WriteLine(Chegirma.CalculateTotal(5000, 0));
+        System.Console.WriteLine(Chegirma.CalculateTotal(5000, 2, 10000));
+        System.Console.WriteLine(Chegirma.CalculateTotal(100, 3, 150));
+
+
+        // 15. Savol: GeometryGuru dasturini yarating
+        System.Console.WriteLine("  Task_15");
+        while (true)
+        {
+            ShowMainMenu();
+            int shakl = (int)ReadDouble("Tanlang: ");
+            if (shakl == 0)
+            {
+                System.Console.WriteLine("Goodbye!");
+                break;
+            }
+            else if (1 <= shakl && shakl <= 3)
+            {
+                ShowCalculationMenu();
+                int yuzaYokiPerimetr = (int)ReadDouble("Tanlang: ");
+                if (yuzaYokiPerimetr == 0) continue;
+                else if (yuzaYokiPerimetr == 1 || yuzaYokiPerimetr == 2)
+                {
+                    if (shakl == 1)
+                    {
+                        System.Console.Write("Doira radiusini kiriting: ");
+                        if (yuzaYokiPerimetr == 1)
+                        {
+                            double radius = Convert.ToDouble(System.Console.ReadLine());
+                            System.Console.WriteLine($"Radius: {radius}; Area: {GetCircleArea(radius)}");
+                        }
+                        else
+                        {
+                            double radius = Convert.ToDouble(System.Console.ReadLine());
+                            System.Console.WriteLine($"Radius: {radius}; Perimeter: {GetCirclePerimeter(radius)}");
+                        }
+                    }
+                    if (shakl == 2)
+                    {
+                        System.Console.WriteLine("to‘g‘ri to‘rtburchakning tomonlarini kiriting: ");
+                        if (yuzaYokiPerimetr == 1)
+                        {
+                            System.Console.Write("eni: ");
+                            double eni = Convert.ToDouble(System.Console.ReadLine());
+                            System.Console.Write("bo'yi: ");
+                            double boyi = Convert.ToDouble(System.Console.ReadLine());
+                            System.Console.WriteLine($"Width: {eni}; Height: {boyi}; Area: {GetRectangleArea(eni, boyi)}");
+                        }
+                        else
+                        {
+                            System.Console.Write("eni: ");
+                            double eni = Convert.ToDouble(System.Console.ReadLine());
+                            System.Console.Write("bo'yi: ");
+                            double boyi = Convert.ToDouble(System.Console.ReadLine());
+                            System.Console.WriteLine($"Width: {eni}; Height: {boyi}; Perimetri: {GetRectanglePerimeter(eni, boyi)}");
+                        }
+                    }
+                    if (shakl == 3)
+                    {
+                        System.Console.Write("kvadrat tomonini kiriting: ");
+                        if (yuzaYokiPerimetr == 1)
+                        {
+                            double tomoni = Convert.ToDouble(System.Console.ReadLine());
+                            System.Console.WriteLine($"Side: {tomoni}; Area: {GetSquareArea(tomoni)}");
+                        }
+                        else
+                        {
+                            double tomoni = Convert.ToDouble(System.Console.ReadLine());
+                            System.Console.WriteLine($"Side: {tomoni}; Perimeter: {GetSquarePerimeter(tomoni)}");
+                        }
+                    }
+                }
+                else System.Console.WriteLine("---- 0-2 orasida son kiriting ----");
+            }
+            else System.Console.WriteLine("---- 0-3 orasida son kiriting ----");
+        }
     }
 
     static void ShowWelcome()
@@ -191,5 +291,97 @@
         average = (first + second + third) / 3;
         return true;
     }
+
+    static class Shakl
+    {
+        public static int GetPerimeter(int tomon)
+        {
+            return tomon * 4;
+        }
+        public static int GetPerimeter(int eni, int boyi)
+        {
+            if (eni != 0 && boyi != 0)
+            {
+                return 2 * (eni + boyi);
+            }
+            return -1;
+        }
+        public static int GetPerimeter(int a, int b, int c)
+        {
+            if (a + b > c && a + c > b && b + c > a)
+            {
+                return a + b + c;
+            }
+            return -1;
+        }
+    }
+
+    class Student
+    {
+        public static void ShowStudent(string name)
+        {
+            System.Console.WriteLine($"Student: {name}");
+        }
+        public static void ShowStudent(string name, int age, int score)
+        {
+            if (0 <= age && age <= 120 && 0 <= score && score <= 100)
+            {
+                string result = score >= 60 ? "Passed" : "Needs practice";
+                System.Console.WriteLine($"Student: {name}; Age: {age}; Score: {score}; Result: {result} ");
+
+            }
+            else System.Console.WriteLine("Invalid student data");
+        }
+    }
+
+    class Chegirma
+    {
+        public static int CalculateTotal(int birlikNarx, int miqdor)
+        {
+            if (1 <= birlikNarx && birlikNarx <= 1_000_000 && 0 <= miqdor && miqdor <= 1000)
+            {
+                return birlikNarx * miqdor;
+            }
+            return -1;
+        }
+        public static int CalculateTotal(int birlikNarx, int miqdor, int chegirma)
+        {
+            int jamiNarx = CalculateTotal(birlikNarx, miqdor);
+            if (jamiNarx >= 0 && 0 <= chegirma && chegirma <= jamiNarx)
+            {
+                return jamiNarx - chegirma;
+            }
+            return -1;
+        }
+    }
+
+    static void ShowMainMenu()
+    {
+        System.Console.WriteLine("Quyidagi shakllardan birini tanlang");
+        System.Console.WriteLine("1 - Circle, \n2 - Rectangle, \n3 - Square, \n0 - Exit");
+    }
+    static void ShowCalculationMenu()
+    {
+        System.Console.WriteLine("Yuza yoki Perimetr birini tanlang");
+        System.Console.WriteLine("1 - Area, \n2 - Perimeter, \n0 - Back");
+    }
+    static double GetCircleArea(double radius) => Math.PI * radius * radius;
+    static double GetCirclePerimeter(double radius) => 2 * Math.PI * radius;
+    static double GetRectangleArea(double width, double height) => width * height;
+    static double GetRectanglePerimeter(double width, double height) => 2 * (width + height);
+    static double GetSquareArea(double side) => side * side;
+    static double GetSquarePerimeter(double side) => 4 * side;
+
+    static double ReadDouble(string prompt)
+{
+    while (true)
+    {
+        System.Console.Write(prompt);
+        if (double.TryParse(System.Console.ReadLine(), out double value))
+            return value;
+        System.Console.WriteLine("Iltimos, son kiriting!");
+    }
+}
+
 
 }
