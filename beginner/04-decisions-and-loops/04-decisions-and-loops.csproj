@@ -4,8 +4,8 @@
     <OutputType>Exe</OutputType>
     <TargetFramework>net11.0</TargetFramework>
     <RootNamespace>_04_decisions_and_loops</RootNamespace>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
+    <ImplicitUsings>desable</ImplicitUsings>
+    <Nullable>desable</Nullable>
   </PropertyGroup>
 
 </Project>
