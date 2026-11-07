@@ -4,81 +4,81 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        // Console.WriteLine("  Task 01");
-        // Area.CalculateArea(5);
-        // Area.CalculateArea(4, 6);
-        // Area.CalculateArea(8, 3, 14);
+        Console.WriteLine("  Task 01");
+        Area.CalculateArea(5);
+        Area.CalculateArea(4, 6);
+        Area.CalculateArea(8, 3, 14);
 
-        // Console.WriteLine("  Task 02");
-        // Max.GetMax(12, 8);
-        // Max.GetMax(4, 19, 11);
-        // Max.GetMax(5.7, 8.2);
+        Console.WriteLine("  Task 02");
+        Max.GetMax(12, 8);
+        Max.GetMax(4, 19, 11);
+        Max.GetMax(5.7, 8.2);
 
-        // Console.WriteLine("\n  Task 03");
-        // Console.WriteLine(Converting.ConvertToText(125));
-        // Console.WriteLine(Converting.ConvertToText(12.5));
-        // Console.WriteLine(Converting.ConvertToText(30 - 01 - 2025)); // Xato chiqyapti shunisi
+        Console.WriteLine("\n  Task 03");
+        Console.WriteLine(Converting.ConvertToText(125));
+        Console.WriteLine(Converting.ConvertToText(12.5));
+        Console.WriteLine(Converting.ConvertToText(30 - 01 - 2025)); // Xato chiqyapti shunisi
 
-        // Console.WriteLine("\n  Task 04");
-        // Console.Write("Butun son kiriting: ");
-        // int butunSon = Convert.ToInt32(Console.ReadLine());
-        // int summa = 0;
-        // butunSon = Math.Abs(butunSon);
-        // while (butunSon > 0)
-        // {
-        //     summa += butunSon % 10;
-        //     butunSon /= 10;
-        // }
-        // Console.WriteLine($"Raqamlar yig'indisi: {summa}");
+        Console.WriteLine("\n  Task 04");
+        Console.Write("Butun son kiriting: ");
+        int butunSon = Convert.ToInt32(Console.ReadLine());
+        int summa = 0;
+        butunSon = Math.Abs(butunSon);
+        while (butunSon > 0)
+        {
+            summa += butunSon % 10;
+            butunSon /= 10;
+        }
+        Console.WriteLine($"Raqamlar yig'indisi: {summa}");
 
-        // Console.WriteLine(" Task_05");
-        // Console.Write("musbat son kiriting (Tub ekanligini aniqlash uchun): ");
-        // int tubSon = Convert.ToInt32(Console.ReadLine());
-        // TubSon(tubSon);
+        Console.WriteLine(" Task_05");
+        Console.Write("musbat son kiriting (Tub ekanligini aniqlash uchun): ");
+        int tubSon = Convert.ToInt32(Console.ReadLine());
+        TubSon(tubSon);
 
-        // Console.WriteLine(" Task_06");
-        // Console.Write("ikkita son kiriting: \n birinchi ");
-        // int son1 = Convert.ToInt32(Console.ReadLine());
-        // Console.Write("ikkinchi ");
-        // int son2 = Convert.ToInt32(Console.ReadLine());
-        // JuftSonlarYigindisi(son1, son2);
+        Console.WriteLine(" Task_06");
+        Console.Write("ikkita son kiriting: \n birinchi ");
+        int son1 = Convert.ToInt32(Console.ReadLine());
+        Console.Write("ikkinchi ");
+        int son2 = Convert.ToInt32(Console.ReadLine());
+        JuftSonlarYigindisi(son1, son2);
 
-        // Console.WriteLine("\n Task_07");
-        // Console.WriteLine("Matn kiriting(harf raqam belgilardan iborat bo'lsin): ");
-        // string matn = Console.ReadLine();
-        // int laters = 0;
-        // int digitils = 0;
-        // Console.Write($"Total characters: {matn.Length} ");
-        // foreach (var item in matn)
-        // {
-        //     if (char.IsLetter(item))
-        //     {
-        //         laters ++;
-        //     }
-        //     else if (char.IsDigit(item))
-        //     {
-        //         digitils ++;
-        //     }
+        Console.WriteLine("\n Task_07");
+        Console.WriteLine("Matn kiriting(harf raqam belgilardan iborat bo'lsin): ");
+        string matn = Console.ReadLine();
+        int laters = 0;
+        int digitils = 0;
+        Console.Write($"Total characters: {matn.Length} ");
+        foreach (var item in matn)
+        {
+            if (char.IsLetter(item))
+            {
+                laters ++;
+            }
+            else if (char.IsDigit(item))
+            {
+                digitils ++;
+            }
 
-        // }
-        // Console.Write($"Letters {laters} ");
-        // Console.Write($"Digits: {digitils} ");
+        }
+        Console.Write($"Letters {laters} ");
+        Console.Write($"Digits: {digitils} ");
 
-        // Console.WriteLine("\n Task_08");
-        // Console.WriteLine("so'z kiriitng Palindromligini tekshiramiz: ");
-        // string palindromSoz = Console.ReadLine().ToLower();
-        // bool isPalindrom = true;
-        // int length = palindromSoz.Length;
+        Console.WriteLine("\n Task_08");
+        Console.WriteLine("so'z kiriitng Palindromligini tekshiramiz: ");
+        string palindromSoz = Console.ReadLine().ToLower();
+        bool isPalindrom = true;
+        int length = palindromSoz.Length;
 
-        // for (int i = 0; i < length / 2; i++)
-        // {
-        //     if (palindromSoz[i] != palindromSoz[length - 1 - i])
-        //     {
-        //         isPalindrom = false;
-        //         break;
-        //     }
-        // }
-        // Console.WriteLine(isPalindrom ? "The word is a palindrome" : "The word is not a palindrome");
+        for (int i = 0; i < length / 2; i++)
+        {
+            if (palindromSoz[i] != palindromSoz[length - 1 - i])
+            {
+                isPalindrom = false;
+                break;
+            }
+        }
+        Console.WriteLine(isPalindrom ? "The word is a palindrome" : "The word is not a palindrome");
 
         Console.WriteLine(" Task_09");
         /*9-masala. So‘zlarni sanash Foydalanuvchi gap kiritsin. Gapda nechta so‘z
@@ -102,7 +102,7 @@ internal class Program
         Console.Write("Matn kiriting");
         string matnStringBuildir = Console.ReadLine();
 
-        
+
 
         
 
