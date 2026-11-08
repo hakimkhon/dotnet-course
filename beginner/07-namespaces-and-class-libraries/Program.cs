@@ -94,7 +94,7 @@ internal class Program
         {
             // if (true)
             // {
-                
+
             // }            
         }
 
@@ -102,9 +102,11 @@ internal class Program
         Console.Write("Matn kiriting");
         string matnStringBuildir = Console.ReadLine();
 
+        matnStringBuildir.ToString();
 
 
-        
+
+
 
 
     }
