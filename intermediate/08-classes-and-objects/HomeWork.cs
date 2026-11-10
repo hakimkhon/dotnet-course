@@ -1,5 +1,19 @@
 namespace MyApp;
 
+class TrafficLight
+{
+    string Color = "Red";
+    string[] colors = ["Red", "Yellow", "Green"];
+    void NextColor()
+    {
+
+    }
+    void GetColor()
+    {
+        Console.WriteLine(Color);
+    }
+} 
+
 public static class HomeWork
 {
     public static void Task1()
