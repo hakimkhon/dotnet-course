@@ -1,4 +1,5 @@
-﻿internal class Program
+﻿using MyApp;
+internal class Program
 {
     class Student
     {
@@ -7,25 +8,27 @@
 
         public void GetInfo()
         {
-            Console.WriteLine(
-                $"""
-                    FullName: {FullName}
-                    Age: {Age}
-                """
-            );
+            Console.WriteLine($"{FullName}, {Age} yosh");
         }
     }
+    class Book
+    {
+        public string? Title;
+        public string? Auther;
+        public int PageCount;
 
+        public void GetDescription()
+        {
+            System.Console.WriteLine($"{Title} - {Auther}, {PageCount} bet");
+        }
+    }
     private static void Main(string[] args)
     {
-        Student madina = new();
-        madina.FullName = "Madina";
-        madina.Age = 18;
+        ClassRoom.Task1();
+        ClassRoom.Task2();
+        ClassRoom.Task3();      
+        ClassRoom.Task4();      
+        ClassRoom.Task5();      
 
-        Console.WriteLine("++++++++++++++++");
-        
-        Student ali = new() { FullName = "Ali", Age = 24 };
-        ali.GetInfo();
-        madina.GetInfo();
     }
 }
