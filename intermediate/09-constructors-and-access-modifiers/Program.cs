@@ -1,26 +1,38 @@
-﻿using System;
-internal class Program
+﻿class Book
 {
+    public string ISBN;
+    public int Title;
+    private int _count;
+    private readonly int _defaultCount;
 
-    private static void Main(string[] args)
+    public Book(string isbn, int title, int count)
     {
-        Console.WriteLine("Hello, World!");
+        this.ISBN = isbn;
+        this.Title = title;
+        this._count = count;
+        this._defaultCount = count;
     }
-}
 
-class Thermostat    // ammo ularni saqlaydigan fieldlar private bo‘lsin.    
-{
-    bool SetTarget(int temperature) => (16 <= temperature && temperature >= 30) ? true : false;
-    void AdjustOneDegree()
+    public bool Borrow()
     {
-        
+        if (_count > 0)
+        {
+            _count--;
+            return true;
+        }
+
+        return false;
     }
-    string GetStatus(){}
 
-    public Thermostat(string roomName, int initialTemperature, int targetTemperature)
+    public bool Return()
     {
+        if (_defaultCount == _count)
+        {
+            return false;
+        }
 
-
+        _count++;
+        return true;
     }
 
 }
