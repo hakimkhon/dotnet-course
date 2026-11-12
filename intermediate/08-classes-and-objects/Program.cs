@@ -24,11 +24,14 @@ internal class Program
     }
     private static void Main(string[] args)
     {
-        ClassRoom.Task1();
-        ClassRoom.Task2();
-        ClassRoom.Task3();      
-        ClassRoom.Task4();      
-        ClassRoom.Task5();      
+        // ClassRoom.Task1();
+        // ClassRoom.Task2();
+        // ClassRoom.Task3();      
+        // ClassRoom.Task4();      
+        // ClassRoom.Task5();      
+
+        HomeWork.Task2();
+
 
     }
 }
