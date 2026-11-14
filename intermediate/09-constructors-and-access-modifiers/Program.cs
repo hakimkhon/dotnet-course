@@ -7,6 +7,7 @@ internal class Program
         ThermostatTask_1();
         PlaylistTask_2();
         LibraryTask_3();
+        CourceTask_04();
     }
 
     static void ThermostatTask_1()
@@ -69,6 +70,10 @@ internal class Program
 
     static void CourceTask_04()
     {
-        
+        var course_01 = new Course();
+        var course_02 = new Course("OOP");
+        var course_03 = new Course("LINQ", 8);
+        var course_04 = new Course("   ");
+        var course_05 = new Course("OOP", 0);
     }
 }
