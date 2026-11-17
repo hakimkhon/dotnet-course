@@ -6,8 +6,8 @@ internal class Program
     {
         MyMethods task = new MyMethods();
         // task.WaterTankTask();
-
-        task.StudySessionTask();
+        // task.StudySessionTask();
+        task.GradeBookTask();
 
     }
 }

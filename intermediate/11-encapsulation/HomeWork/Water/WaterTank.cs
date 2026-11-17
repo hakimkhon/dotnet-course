@@ -1,4 +1,5 @@
 namespace Homework11;
+
 using System;
 
 class WaterTank
@@ -29,6 +30,7 @@ class WaterTank
         Console.Write("False; ");
         return false;
     }
+
     public bool Use(int amount)
     {
         if (0 < amount && amount <= _water)
@@ -41,6 +43,6 @@ class WaterTank
         Console.Write($"False; ");
         return false;
     }
-    public int GetFreeCapacity() => Capacity - Water;
 
+    public int GetFreeCapacity() => Capacity - Water;
 }

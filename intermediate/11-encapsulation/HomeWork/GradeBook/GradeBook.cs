@@ -4,11 +4,11 @@ namespace Homework11;
 class GradeBook
 {
     private string _studentName;
-    private int[] _count = new int[];
+    private int[] _count;
     public string StudentName => _studentName;
     public int[] Count => _count;
 
-    public GradeBook(string nameStudent, int[] count = new int[])
+    public GradeBook(string nameStudent, int[] counts)
     {
         bool isNegativeElement = true;
         if (!string.IsNullOrEmpty(nameStudent) && counts != null)
@@ -22,8 +22,8 @@ class GradeBook
             }
             if (isNegativeElement)
             {
-                this.Count = count;
-                this.StudentName = nameStudent;
+                _count = counts;
+                _studentName = nameStudent;
             }
         }
     }
@@ -39,9 +39,24 @@ class GradeBook
         Console.WriteLine("False; ");
         return false;
     }
+    // public int[] GetGrades(){}
     public int[] GetGrades()
     {
-        
+        int[] copy = new int[_count.Length];
+        for (int i = 0; i < _count.Length; i++)
+        {
+            copy[i] = _count[i];
+        }
+        return copy;
+    }
+    public int GetAverage()
+    {
+        int result = 0;
+        foreach (var item in _count)
+        {
+            result += item;   
+        }
+        return (int)result / _count.Length;
     }
 
 }
