@@ -18,4 +18,23 @@ class MyMethods
         // designer.ShowInfoDeveloper();
 
     }
+
+    public void DeviseTask()
+    {
+        var phone = new Phone("Pixel");
+        phone.ShowModel();
+        phone.ShowPhoneModel();
+    }
+
+    public void NotificationTask()
+    {
+        var emailNotification = new EmailNotification("Xush kelibsiz", "ali@example.com");
+        var smsNotification = new SmsNotification("Tasdiqlash kodi", "+998901234567");
+
+        // if (is EmailNotification emailNotification.EmailAddress)
+        {
+            
+        }
+
+    }
 }
