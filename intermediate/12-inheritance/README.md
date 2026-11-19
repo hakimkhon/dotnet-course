@@ -2,3 +2,4 @@
 
 ### Natijalar
 
+![alt text](Анимация.gif)
