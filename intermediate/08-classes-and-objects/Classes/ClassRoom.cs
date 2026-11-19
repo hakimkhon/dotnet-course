@@ -1,4 +1,5 @@
 namespace MyApp;
+using System;
 
 class Student
 {

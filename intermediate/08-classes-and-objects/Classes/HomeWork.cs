@@ -1,14 +1,26 @@
 namespace MyApp;
 
+using System;
+
 class TrafficLight
 {
-    string HozirgiRang = "Red";
-    string[] colors = ["Red", "Yellow", "Green"]; 
-    void NextColor() { }
-
-    void GetColor()
+    int index = 0;
+    string[] colors = ["Red", "Green", "Yellow"];
+    public void NextColor()
     {
-        Console.WriteLine(HozirgiRang);
+        index++;
+        if (index == colors.Length)
+        {
+            index = 0;
+            GetColor();
+        }
+        else
+            GetColor();
+    }
+
+    public void GetColor()
+    {
+        Console.WriteLine(colors[index]);
     }
 }
 
@@ -59,6 +71,7 @@ class Song
         return $"{Title} - {DurationSeconds} soniya {PlayCount} marta ijro etildi";
     }
 }
+
 class Playlist
 {
     Song[] Songs = new Song[5];
@@ -67,11 +80,10 @@ class Playlist
     {
         // if (song.)
         {
-            
+
         }
         return true;
     }
-    
 }
 
 class Product
@@ -84,7 +96,7 @@ class Product
     {
         if (amount >= 0 && Quantity - amount >= 0)
         {
-            Quantity =- amount;
+            Quantity = -amount;
             return true;
         }
         return false;
@@ -101,22 +113,3 @@ class Warehouse
     }
 }
 
-public static class HomeWork
-{
-    public static void Task1() { }
-
-    public static void Task2()
-    {
-        var hamyon_01 = new Wallet();
-        // var hamyon_02 = new Wallet();
-
-        hamyon_01.AddMoney(50000);
-        Console.WriteLine($" {hamyon_01.GetBalance()}");
-
-        Console.WriteLine(hamyon_01.SpendMoney(12000));
-        Console.WriteLine($" {hamyon_01.GetBalance()}");
-
-        Console.WriteLine(hamyon_01.SpendMoney(40000));
-        Console.WriteLine($" {hamyon_01.GetBalance()}");
-    }
-}
