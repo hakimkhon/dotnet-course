@@ -26,7 +26,13 @@ public class Mymethods
         {
             payment.Pay(5000);
         }
+    }
 
+    public void ReportPrintertask()
+    {
+        var result = new ReportPrinter();
+        result.Print("Oylik hisobot");
+        result.Print("Oylik hisobot", 125000);
     }
  
 }
