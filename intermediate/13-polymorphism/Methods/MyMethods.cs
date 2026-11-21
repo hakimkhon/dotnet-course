@@ -13,6 +13,7 @@ public class Mymethods
         foreach (Notification notification in notifications)
         {
             notification.Send();
+            Console.WriteLine();
         }
 
         Payment[] payments =
