@@ -19,7 +19,7 @@ public class WashingMachine : Appliance
 
     public override void CalculatePowerConsumption(int hours)
     {
-        Console.WriteLine($"{hours} kVt");
+        Console.WriteLine($"{hours * 3} kVt");
     }
 }
 
@@ -36,7 +36,7 @@ public class AirHeater : Appliance
 
     public override void CalculatePowerConsumption(int hours)
     {
-        Console.WriteLine($"{hours} kVt");
+        Console.WriteLine($"{hours * 3} kVt");
     }
 }
 
@@ -53,6 +53,6 @@ public class ElectricKettle : Appliance
 
     public override void CalculatePowerConsumption(int hours)
     {
-        Console.WriteLine($"{hours} kVt");
+        Console.WriteLine($"{hours * 3} kVt");
     }
 }

@@ -20,5 +20,10 @@ internal class Program
             new AirHeater("Isitgich"),
             new ElectricKettle("Choynak"),
         };
+
+        appliances[0].CalculatePowerConsumption(1);
+        appliances[1].CalculatePowerConsumption(2);
+        appliances[2].CalculatePowerConsumption(3);
+
     }
 }
